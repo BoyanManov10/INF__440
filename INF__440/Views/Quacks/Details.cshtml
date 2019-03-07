@@ -1,0 +1,42 @@
+﻿@model INF__440.Models.Quack
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quack</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quack_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quack_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quack_Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quack_Text)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Quack_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

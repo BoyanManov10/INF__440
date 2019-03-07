@@ -1,0 +1,42 @@
+﻿@model IEnumerable<INF__440.Models.Quack>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <h1 class="header">Welcome to Quack</h1>
+    <p class="header2">Do you want to learn more about the latest travel trends and experiences? Register or Log in with Quacks and stay updated !</p>
+    <li class="header">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li class="header">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+</div>
+
+
+<h4 class="header3">Travel Quack of the Day</h4>
+<div class=" header1">
+    
+    <table class="table">
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quack_Title)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Created)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quack_Text)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>
