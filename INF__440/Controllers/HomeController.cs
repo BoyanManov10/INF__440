@@ -11,16 +11,11 @@ namespace INF__440.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // Action method for lsiting one random quack from the DB on the landing page
         public ActionResult Index()
         {
-            var sss = new ApplicationDbContext();
-            
-
-
-
-            return View(db.Quacks.ToList().OrderBy(r => Guid.NewGuid()).Take(1));
-
-          
+            // Taking all qucaks from the DB and adding them to to a list. Only one item from the list will be displayed. 
+           return View(db.Quacks.ToList().OrderBy(r => Guid.NewGuid()).Take(1));
         }
 
         public ActionResult About()

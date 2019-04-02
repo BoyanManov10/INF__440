@@ -192,11 +192,16 @@
     <Compile Include="Migrations\201903071348506_QuackModelUpdate_1.Designer.cs">
       <DependentUpon>201903071348506_QuackModelUpdate_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903121845558_QuackUpdate.cs" />
+    <Compile Include="Migrations\201903121845558_QuackUpdate.Designer.cs">
+      <DependentUpon>201903121845558_QuackUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Quack.cs" />
+    <Compile Include="Models\QuackViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -264,6 +269,9 @@
     <Content Include="Views\Quacks\Details.cshtml" />
     <Content Include="Views\Quacks\Edit.cshtml" />
     <Content Include="Views\Quacks\Index.cshtml" />
+    <Content Include="Views\Quacks\QuackList.cshtml" />
+    <Content Include="Views\Quacks\QuackListId.cshtml" />
+    <Content Include="Views\Quacks\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903071348506_QuackModelUpdate_1.resx">
       <DependentUpon>201903071348506_QuackModelUpdate_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903121845558_QuackUpdate.resx">
+      <DependentUpon>201903121845558_QuackUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

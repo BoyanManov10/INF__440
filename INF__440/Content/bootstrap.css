@@ -13,6 +13,16 @@ html {
 body {
     margin: 0;
 }
+.header4 {
+    color: lightseagreen;
+    float: left;
+    width: 80%;
+    margin-top:5%;
+    margin-left:9.9%;
+    margin-right: 9.9%;
+    font-family: 'Comic Sans MS';
+    text-align: left;
+}
 .header {
     color: lightseagreen;
     float: left;
@@ -29,8 +39,9 @@ body {
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
+    border:ridge;
     text-align: center;
-    border-style:ridge;
+    
 
     font-family: 'Comic Sans MS';
 }
@@ -44,6 +55,14 @@ body {
     text-align: center;
     font-family: 'Comic Sans MS';
 }
+.bordernew{
+    border-top:solid;
+    border-color:lightseagreen;
+}
+.bordernew2{
+    border-bottom:solid;
+    border-color:lightseagreen;
+}
 .header3 {
     color: lightseagreen;
     margin-top: 5%;
@@ -53,6 +72,40 @@ body {
     margin-right: 24%;
     text-align: center;
     font-family: 'Comic Sans MS';
+}
+.header5 {
+    color: lightseagreen;
+    float: left;
+    width: 40%%;
+    margin-left:15%;
+    margin-top:5%;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    border:solid;
+    border-bottom-color:lightseagreen;
+}
+.header7 {
+    color: lightseagreen;
+    float: left;
+    width: 40%%;
+    margin-left: 29%;
+    margin-right:29%;
+    margin-top: 5%;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    border: solid;
+    border-bottom-color: lightseagreen; 
+}
+.header6 {
+    color: lightseagreen;
+    float: left;
+    width: 15%;
+    margin-left: 20%;
+    margin-top: 5%;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    border: solid;
+    border-bottom-color: lightseagreen;
 }
 article,
 aside,

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<INF__440.Models.Quack>
+
+@{
+    ViewBag.Title = "QuackListId";
+}
+
+<h2 class=" header1">Quacks created by You </h2>
+
+
+<div class=" header4"> 
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Quack_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quack_Text)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Quack_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quack_Text)
+            </td>
+
+        </tr>
+    }
+
+</table>
+</div>

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using INF__440.Models;
+using Microsoft.AspNet.Identity;
 
 namespace INF__440.Controllers
 {
@@ -18,6 +19,17 @@ namespace INF__440.Controllers
         public ActionResult Index()
         {
             return View(db.Quacks.ToList());
+        }
+
+        // Action method for listing the three newest quacks ordered by date 
+        public ActionResult Home()
+        {
+            QuackViewModel quacks = new QuackViewModel();
+
+            quacks.randomQuacks = db.Quacks.ToList().OrderByDescending(r => r.Date_Created).Take(3).ToList();
+            quacks.quackLinks = db.Quacks.ToList().OrderBy(r => Guid.NewGuid()).Take(5).ToList();
+
+            return View(quacks);
         }
 
         // GET: Quacks/Details/5
@@ -48,6 +60,10 @@ namespace INF__440.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Quack_Id,Quack_Title,Date_Created,Quack_Text")] Quack quack)
         {
+            var userId = User.Identity.GetUserId();
+
+            quack.UserId = userId;
+
             if (ModelState.IsValid)
             {
                 db.Quacks.Add(quack);
@@ -87,6 +103,23 @@ namespace INF__440.Controllers
                 return RedirectToAction("Index");
             }
             return View(quack);
+        }
+
+        public ActionResult QuackList()
+        {
+            return View(db.Quacks.ToList());
+
+           
+        }
+
+        // Action method for listing all the quacks created by the logged it user
+        [Authorize]
+        public ActionResult QuackListId()
+        {
+            var current_user_id = User.Identity.GetUserId();
+
+            var all_quacks = db.Quacks.Where(x => x.UserId == current_user_id).ToList();
+            return View(all_quacks);
         }
 
         // GET: Quacks/Delete/5

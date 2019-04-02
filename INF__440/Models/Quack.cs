@@ -10,6 +10,8 @@ namespace INF__440.Models
     {
         [Key]
         public int Quack_Id { get; set; }
+        
+        public string UserId { get; set; }
 
         [Required]
         [Display(Name ="Quack Title")]

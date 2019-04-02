@@ -1,0 +1,45 @@
+﻿@model IEnumerable<INF__440.Models.Quack>
+
+@{
+    ViewBag.Title = "QuackList";
+}
+
+<h2>QuackList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quack_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quack_Text)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quack_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quack_Text)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Quack_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Quack_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Quack_Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,46 @@
+﻿@model INF__440.Models.QuackViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1 class="header">Welcome to Travel Quack</h1>
+<div class=" header5">
+    @foreach (var item in Model.randomQuacks)
+    {
+
+        <table class="table">
+            <tr class="bordernew">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quack_Title)
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Created)
+                </td>
+            </tr>
+            <tr class="bordernew2">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quack_Text)
+                </td>
+            </tr>
+
+        </table>
+    }
+    </div>
+<div class=" header6">
+    @foreach (var item in Model.quackLinks)
+    {
+
+        <table class="table">
+            <tr class=" bordernew">
+                <td>
+                    @Html.ActionLink(item.Quack_Title, "Details", new { id = item.Quack_Id })
+                </td>
+            </tr>
+        </table>
+    }
+    </div> 
